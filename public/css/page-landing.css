@@ -15,22 +15,7 @@
   height: 16vh;
 }
 
-.visit a {
-  width: 8rem;
-  height: 8rem;
-  background: #ffd666;
 
-  border: none;
-  border-radius: 3rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin: auto;
-
-  transition: background .800ms;
-}
 
 #logo {
   animation-delay: 50ms;
@@ -53,6 +38,24 @@ main h1 {
   animation-delay: 200ms;
 }
 
+.visit a {
+  width: 8rem;
+  height: 8rem;
+  background: #ffd666;
+
+  border: none;
+  border-radius: 3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: auto;
+
+  transition: background .800ms;
+
+  animation-delay: 250ms;
+}
 /* desketop version */
 
 @media (min-width: 760px) {
@@ -73,7 +76,7 @@ main h1 {
   }
 
   main h1 {
-    
+    line-height: .88;
     font-weight: bold;
 
     width: min(300px, 80%);
