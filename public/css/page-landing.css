@@ -11,9 +11,7 @@
   width: min(90%, 112rem);
 }
 
-.location,
-h1,
-.visit p {
+.location, h1, .visit p {
   height: 16vh;
 }
 
@@ -34,10 +32,6 @@ h1,
   transition: background .800ms;
 }
 
-.visit a:hover {
-  background: #96feff;
-}
-
 #logo {
   animation-delay: 50ms;
 }
@@ -50,14 +44,13 @@ main h1 {
   animation-delay: 150ms;
 }
 
+.visit a:hover {
+  background: #96feff;
+}
+
 .visit p {
   animation-delay: 200ms;
 }
-
-.visit a {
-  animation-delay: 250ms;
-}
-
 
 /* desketop version */
 
