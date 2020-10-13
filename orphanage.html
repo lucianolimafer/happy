@@ -27,40 +27,47 @@
   </head>
   <body id="body">
     <div id="page-orphanage">
-      <aside class="animate-right"></aside>
+      <aside class="animate-right sidebar">
+          <img src="./public/images/map-marker.svg" alt="Happy">
 
-      <main>
-        <div id="orphanage-datails">
+          <footer>
+              <button onclick="history.back()">
+                  <img src="./public/images/arrow-back.svg" alt="voltar">
+              </button>
+          </footer>
+      </aside>
+
+      <main class="animate-appear with-sidebar">
+        <div class="orphanage-datails">
           <img src="./public/images/home.jpg" alt="Cantinho da Vó Gerogina" />
 
           <div class="images">
-            <button class="active" type="button">
-              <img src="./public/images/home.jpg" alt="IMG 1" />
+            <button onclick="selectImage(event)" class="active" type="button">
+              <img src="https://source.unsplash.com/random?id-1" alt="IMG 1" />
+              
+              <button onclick="selectImage(event)" type="button">
+                <img src="https://source.unsplash.com/random?id-2" alt="IMG 1" />
+              </button>
+              <button onclick="selectImage(event)" type="button">
+                <img src="https://source.unsplash.com/random?id-3" alt="IMG 1" />
+              </button>
+              <button onclick="selectImage(event)" type="button">
+                <img src="https://source.unsplash.com/random?id-4" alt="IMG 1" />
+              </button>
+              <button onclick="selectImage(event)" type="button">
+                <img src="https://source.unsplash.com/random?id-5" alt="IMG 1" />
+              </button>
+              <button onclick="selectImage(event)" type="button">
+                <img src="./public/images/home.jpg" alt="IMG 1" />
+              </button>
             </button>
-            <button type="button">
-              <img src="./public/images/home.jpg" alt="IMG 1" />
-            </button>
-            <button type="button">
-              <img src="./public/images/home.jpg" alt="IMG 1" />
-            </button>
-            <button type="button">
-              <img src="./public/images/home.jpg" alt="IMG 1" />
-            </button>
-            <button type="button">
-              <img src="./public/images/home.jpg" alt="IMG 1" />
-            </button>
-            <button type="button">
-              <img src="./public/images/home.jpg" alt="IMG 1" />
-            </button>
+            
           </div>
 
           <div class="orphanage-details-content">
             <h1>Cantinho da Vó Georgina</h1>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum
-              perferendis at cum? Minus enim suscipit, obcaecati iusto excepturi
-              neque quo voluptatem ipsam, cumque recusandae laboriosam officia
-              odit repudiandae at numquam?
+              Presta assistência a crianças de 06 a 15 anos que se encontre em situação de risco e/ou vunerabilidade social.
             </p>
 
             <div class="map-container">
@@ -74,19 +81,15 @@
 
             <h2>Instruções para visitar</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Consequuntur, architecto accusamus voluptate dignissimos, voluptas
-              saepe quia reiciendis, consectetur at quisquam minima. Ea
-              praesentium mollitia assumenda, explicabo sapiente corporis hic.
-              Vero.
+                Venha se sentir a vontate e traga muito amor e paciência para dar.
             </p>
 
-            <div id="open-details">
-              <div id="hour">
+            <div class="open-details">
+              <div class="hour">
                 <img src="./public/images/clock.svg" alt="Horários" />
                 Horário de visitas Das 8h às 18h
               </div>
-              <div id="open-on-weekends">
+              <div class="open-on-weekends">
                 <img src="./public/images/info.svg" alt="Informações" />
                 Atendemos fim de semana
               </div>
