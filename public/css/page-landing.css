@@ -11,11 +11,11 @@
   width: min(90%, 112rem);
 }
 
-.location, h1, .visit p {
+.location,
+h1,
+.visit p {
   height: 16vh;
 }
-
-
 
 #logo {
   animation-delay: 50ms;
@@ -52,21 +52,29 @@ main h1 {
 
   margin: auto;
 
-  transition: background .800ms;
+  transition: background 0.8ms;
 
   animation-delay: 250ms;
 }
 /* desketop version */
 
 @media (min-width: 760px) {
+  #container {
+    padding: 7rem 2rem;
+    /* shorthand background: image repeat position / size */
+    background: url("../images/bg.svg") no-repeat 80% /
+      clamp(30rem, 54vw, 56rem);
+  }
+
   header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
   }
 
-  .location, h1, .visit p {
+  .location,
+  h1,
+  .visit p {
     height: initial;
     text-align: initial;
   }
@@ -78,7 +86,7 @@ main h1 {
   }
 
   main h1 {
-    line-height: .88;
+    line-height: 0.88;
     font-weight: bold;
 
     margin: clamp(10%, 9vh, 12%) 0 4rem;
@@ -86,9 +94,19 @@ main h1 {
     width: min(300px, 80%);
   }
 
+  .visit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   .visit p {
     font-size: 2.4rem;
     line-height: 1.5;
     width: clamp(20rem, 20vw, 30rem);
+  }
+
+  .visit a {
+    margin: initial;
   }
 }
