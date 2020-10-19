@@ -1,76 +1,95 @@
 // create map
-const happyMap = L.map('mapid').setView([-30.0826464, -51.2131719], 14);
-
+const happyMap = L.map("mapid").setView([-30.0826464, -51.2131719], 14);
 
 // create and add tilelayer
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(happyMap);
-
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(
+  happyMap
+);
 
 // create icon
 const icon = L.icon({
-    iconUrl: "../public/images/map-marker.svg",
-    iconSize: [58, 68],
-    iconAnchor: [29, 68]
-})
+  iconUrl: "../public/images/map-marker.svg",
+  iconSize: [58, 68],
+  iconAnchor: [29, 68],
+});
 
 let marker;
 
-
 // create and add marker
-happyMap.on('click', (event) => {
-    
-    const lat = event.latlng.lat;
-    const lng = event.latlng.lng;
+happyMap.on("click", (event) => {
+  const lat = event.latlng.lat;
+  const lng = event.latlng.lng;
 
-    document.querySelector('[name=lat]').value = lat;
-    document.querySelector('[name=lng]').value = lng;
+  document.querySelector("[name=lat]").value = lat;
+  document.querySelector("[name=lng]").value = lng;
 
-    //remove icon
-    marker &&  happyMap.removeLayer(marker)
+  //remove icon
+  marker && happyMap.removeLayer(marker);
 
-    //add icon layer
-    marker = L.marker([lat, lng], { icon })
-    .addTo(happyMap)
-})
-
-
+  //add icon layer
+  marker = L.marker([lat, lng], { icon }).addTo(happyMap);
+});
 
 // add images field
 function addPhotoField() {
-    // get image container #images
-    const container = document.querySelector('#images')
+  // get image container #images
+  const container = document.querySelector("#images");
 
-    // get to duplicate .new-upload
-    const fieldsContainer = document.querySelectorAll('.new-upload')
+  // get to duplicate .new-upload
+  const fieldsContainer = document.querySelectorAll(".new-upload");
 
-    // duplicate
-    const newFieldContainer = fieldsContainer[fieldsContainer.length - 1].cloneNode(true)
-    
-    // verify if the field is clear, if yes add
-    const input = newFieldContainer.children[0]
-    if (input.value == ""){
-        return
-    }
+  // duplicate
+  const newFieldContainer = fieldsContainer[
+    fieldsContainer.length - 1
+  ].cloneNode(true);
 
-    // clear the field before
-    input.value = ""
+  // verify if the field is clear, if yes add
+  const input = newFieldContainer.children[0];
+  if (input.value == "") {
+    return;
+  }
 
-    // add the clone to container #images
-    container.appendChild(newFieldContainer)
+  // clear the field before
+  input.value = "";
+
+  // add the clone to container #images
+  container.appendChild(newFieldContainer);
+}
+
+function deleteField(event) {
+  const span = event.currentTarget;
+
+  const fieldsContainer = document.querySelectorAll(".new-upload");
+
+  if (fieldsContainer.length < 2) {
+    //clear the the first field if true
+    span.parentNode.children[0].value = "";
+    return;
+  }
+
+  // delete the field
+  span.parentNode.remove();
 }
 
 
-function deleteField(event) {
-    const span = event.currentTarget
 
-    const fieldsContainer = document.querySelectorAll('.new-upload')
+// yes or not selector
+function toggleSelect(event) {
+    // clear class
+    document.querySelectorAll('.button-select button')
+    .forEach((button) => {
+        button.classList.remove('active')
+    })
+    // put the class again on the cliked button
+    const button = event.currentTarget
+    button.classList.add('active')
 
-    if(fieldsContainer.length < 2){
-        //clear the the first field if true
-        span.parentNode.children[0].value = ""
-        return
-    }
+    // actulize the input
+    const input = document.querySelector('[name="open_on_weekends"]')
+    console.log(input)
 
-    // delete the field
-    span.parentNode.remove();
+    //verify yes or no
+    input.value = button.dataset.value
+
+    
 }
