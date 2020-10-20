@@ -1,8 +1,8 @@
 const Database = require('./db');
 
-Database.then(function(db) {
+Database.then(async db => {
     // insert data on the table
-    db.run(`
+    await db.run(`
         INSERT INTO orphanages (
             lat,
             lng,
