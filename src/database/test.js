@@ -22,8 +22,8 @@ Database.then(async db => {
     })*/
 
     // see data
-    const selectedOrphanages = await db.all("SELECT * FROM orphanages")
-    console.log(selectedOrphanages)
+    //const selectedOrphanages = await db.all("SELECT * FROM orphanages")
+    //console.log(selectedOrphanages)
 
 
     // see data by ID
